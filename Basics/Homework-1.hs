@@ -28,6 +28,15 @@ doubleList [] = []
 doubleList (x:[]) = [x]
 doubleList (x:(y:zs)) = x : (y * 2) : doubleList(zs)
 
+--Exercise 3
+--Example sumDigits [16,7,12,5] = 1+6+7+1+2+5 = 22
+sumDigits :: [Integer] -> Integer
+sumDigits [] = 0
+sumDigits (x:[]) = x
+sumDigits (x:y)
+	| x > 9 = (x `mod` 10) + (x `div` 10) + sumDigits(y) 
+	| otherwise = x + sumDigits(y) 
+	
 
 main ::  IO ()
 main = print (toDigits 52576)
