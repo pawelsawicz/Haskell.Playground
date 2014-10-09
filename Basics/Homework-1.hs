@@ -18,6 +18,16 @@ toDigitsRev :: Integer -> [Integer]
 toDigitsRev number = reverse (toDigits number)
 
 --Exercise 2
+--Example doubleEveryOther [1,2,3,4] -> [1,2,6,4]
+doubleEveryOther :: [Integer] -> [Integer]
+doubleEveryOther [] = []
+doubleEveryOther number = reverse(doubleList(reverse number))
+
+doubleList :: [Integer] -> [Integer]
+doubleList [] = []
+doubleList (x:[]) = [x]
+doubleList (x:(y:zs)) = x : (y * 2) : doubleList(zs)
+
 
 main ::  IO ()
 main = print (toDigits 52576)
