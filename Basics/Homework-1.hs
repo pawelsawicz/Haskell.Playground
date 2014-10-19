@@ -36,7 +36,18 @@ sumDigits (x:[]) = x
 sumDigits (x:y)
 	| x > 9 = (x `mod` 10) + (x `div` 10) + sumDigits(y) 
 	| otherwise = x + sumDigits(y) 
-	
+
+--Exercise 4
+--Example validate  4012888888881881 = True
+validate :: Integer -> Bool
+validate number
+	| sumDigits(doubleEveryOther(toDigits(number))) `mod` 10 == 0 = True
+	| otherwise = False
 
 main ::  IO ()
 main = print (toDigits 52576)
+
+
+
+
+
