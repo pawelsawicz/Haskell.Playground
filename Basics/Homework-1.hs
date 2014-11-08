@@ -44,6 +44,19 @@ validate number
 	| sumDigits(doubleEveryOther(toDigits(number))) `mod` 10 == 0 = True
 	| otherwise = False
 
+
+--Exercise 5 - Tower of Hanoi 
+--Example hanoi 2 "a" "b" "c" == [("a","c"),("a","b"),("c","b")]
+--2 -> 3 moves
+--3 -> hanoi 3 "a" "b" "c" == [("a","b"),("a","c"),("b","c"),("a","b"),("b","c"),("b","c"),("a","b")] 
+type Peg = String
+type Move = (Peg, Peg)
+hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
+hanoi number peg1 peg2 peg3 = [("peg1","peg2"),("peg2","peg3")]
+
+
+
+
 main ::  IO ()
 main = print (toDigits 52576)
 
