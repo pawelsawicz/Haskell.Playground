@@ -29,3 +29,7 @@ getRestOfMessage :: String -> String
 getRestOfMessage stringValue = case reads stringValue :: [(Int,String)] of	
 	[(_,n)] -> n
 	_ -> "Empty"
+
+parse :: String -> [LogMessage]
+parse valueOfFile = map (parseMessage) (lines valueOfFile)
+
